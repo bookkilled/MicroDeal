@@ -1,0 +1,822 @@
+@font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-bg: #fff;
+@small-font-size: 12px;
+@mid-font-size: 16px;
+@big-font-size: 18px;
+@max-font-size: 20px;
+@import "reset.less";
+
+*{ margin: 0; padding: 0;}
+html,body {
+    font-family: @font-family;
+    height: 100%;
+    font-size: @mid-font-size;
+}
+/*6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+    html,body {
+        height: 100%;
+        font-size: @big-font-size;
+    }
+ }
+
+/*6+*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){ 
+    html,body {
+        height: 100%;
+        font-size: @max-font-size;
+    }
+}
+.bg {
+    height: 100%;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+}
+.interval {
+    height: 0.78125rem;
+    background-color: #f9f9f9;
+}
+.fbox {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .fbox-mc {
+        width: 90.625%;
+    }
+}
+.usebox {
+    .logo {
+        height: 4rem;
+        background: url('../img/logo.png') center center no-repeat;
+        background-size: contain;
+    }
+}
+// head
+.brand-title {
+    position: fixed;
+    top: 0;
+    height: 2.8125rem;
+    width: 100%;
+    max-width: 640px;
+    line-height: 2.8125rem;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 9;
+}
+.brand-title-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: 17px;
+        display: block;
+        width: 0.8125rem;
+        height: 0.8125rem;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 1px;
+        border-bottom-left-radius: 1px;
+        -webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg)
+    }
+}
+.brand-question {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAYAAABHomvIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjODRjZGYzYy04YjBhLTIxNDUtYmYxMS00ZmJhYTJjZWZmNmIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkQyMjAyMTZBNEU5MTFFNjg5QTlEOTEyREJDRTdENDQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzkxRTBCRjZBNEU4MTFFNjg5QTlEOTEyREJDRTdENDQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTE4NzhiNTEtMzFjYi00YTRhLWIyZjYtN2VlN2QzM2I0ODZkIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmM4NGNkZjNjLThiMGEtMjE0NS1iZjExLTRmYmFhMmNlZmY2YiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqus+FQAAALySURBVHjazJnPTxNBFMeXxpTLEtJwNFxqUqwJXHqBeoNiCHf/AUA9GaAemhgbY0AijRykJy/+AfInIB7BgxwIAYmJvRBupBzKBS/1jfmOvk7a7vza1Uk+mexu35tv3+682Xk70G63A8s2TswQRSJHjBIhrl0T58R3Yp/YI46tRhECDQiJMnHSNm8nsA1NxhzQjGCaqBIv2LljRGYfkTpH5AJEchSRLSLS48x2nVgjfvqI4KISiS3inmHkA9hsKb4Wo+yinL5hzraJMQthKmPwJdumrUDuZNWDMJVV5c8bCawz4/kYxEnm2Th1XYGbzOh+jOIkxX63u9+EmEtAnGSu18ThP0qzHy0nKE6yzMYflOdvsYxTRV8n3lnk/BJRYMcN4hC9ThNj3iGeIt9WeR4MmXrTVFIgfvRZQT4SGU1fOWYX8ltcZknYVFwTtrvEQ6IEKuzaVwORMpmXuUC5tpquELuwe9/jeoZFt2Kw4si1+7fACZw4MhSXhV0zIjqPWYR1fR/BZiJFj+E0HtLPFpNCtB3iqs/vGhYTbg/9jJjFkzj4YujkEzGrISBjIVBqmRQC8zj4ZuikoRmdCvpDA99n6O+K+32J+z3iOfFmMHl0nlOVEdhdioMbHKQ9issitUhxBUN7uardxCGwoOS/rIWPDoG+b3EzIjca3WKRZi7wQN4O3FsJs1ZMnicOfqSWi1THjPHXdhztpZazFM85HgVeOdr/zc0OS12c/FnqXF8W4qDjZSGFUH5AvxD8+7bQoanLC2vO4d+/Jlrobex7vrAK1qL2qBrIpN+ytJd78fVum6ZBD5smEblrywh23TT9j9vORyYb92IC4qbYeDWb0seDGMXN2pQ+uolciUHcSpQ4nfJbLYHyW82lPihYUjbib4m8hbA8bHlb8lkCfkk8V0rAYuN0wErALVwbYiXgKbyG8RLwBvHKVwmYM0w8I04tiuinsB2Oo4je6zNECRGSnyGGcK3FPkMcINJWnyFcBCbSfgkwANHCLH9lMLjBAAAAAElFTkSuQmCC);
+    background-size: 1.3125rem 1.3125rem;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+.head-title {
+    background-color: #f64353;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.0625rem;
+}
+.head-question {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAYAAABHomvIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjODRjZGYzYy04YjBhLTIxNDUtYmYxMS00ZmJhYTJjZWZmNmIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkQyMjAyMTZBNEU5MTFFNjg5QTlEOTEyREJDRTdENDQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzkxRTBCRjZBNEU4MTFFNjg5QTlEOTEyREJDRTdENDQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTE4NzhiNTEtMzFjYi00YTRhLWIyZjYtN2VlN2QzM2I0ODZkIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmM4NGNkZjNjLThiMGEtMjE0NS1iZjExLTRmYmFhMmNlZmY2YiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pqus+FQAAALySURBVHjazJnPTxNBFMeXxpTLEtJwNFxqUqwJXHqBeoNiCHf/AUA9GaAemhgbY0AijRykJy/+AfInIB7BgxwIAYmJvRBupBzKBS/1jfmOvk7a7vza1Uk+mexu35tv3+682Xk70G63A8s2TswQRSJHjBIhrl0T58R3Yp/YI46tRhECDQiJMnHSNm8nsA1NxhzQjGCaqBIv2LljRGYfkTpH5AJEchSRLSLS48x2nVgjfvqI4KISiS3inmHkA9hsKb4Wo+yinL5hzraJMQthKmPwJdumrUDuZNWDMJVV5c8bCawz4/kYxEnm2Th1XYGbzOh+jOIkxX63u9+EmEtAnGSu18ThP0qzHy0nKE6yzMYflOdvsYxTRV8n3lnk/BJRYMcN4hC9ThNj3iGeIt9WeR4MmXrTVFIgfvRZQT4SGU1fOWYX8ltcZknYVFwTtrvEQ6IEKuzaVwORMpmXuUC5tpquELuwe9/jeoZFt2Kw4si1+7fACZw4MhSXhV0zIjqPWYR1fR/BZiJFj+E0HtLPFpNCtB3iqs/vGhYTbg/9jJjFkzj4YujkEzGrISBjIVBqmRQC8zj4ZuikoRmdCvpDA99n6O+K+32J+z3iOfFmMHl0nlOVEdhdioMbHKQ9issitUhxBUN7uardxCGwoOS/rIWPDoG+b3EzIjca3WKRZi7wQN4O3FsJs1ZMnicOfqSWi1THjPHXdhztpZazFM85HgVeOdr/zc0OS12c/FnqXF8W4qDjZSGFUH5AvxD8+7bQoanLC2vO4d+/Jlrobex7vrAK1qL2qBrIpN+ytJd78fVum6ZBD5smEblrywh23TT9j9vORyYb92IC4qbYeDWb0seDGMXN2pQ+uolciUHcSpQ4nfJbLYHyW82lPihYUjbib4m8hbA8bHlb8lkCfkk8V0rAYuN0wErALVwbYiXgKbyG8RLwBvHKVwmYM0w8I04tiuinsB2Oo4je6zNECRGSnyGGcK3FPkMcINJWnyFcBCbSfgkwANHCLH9lMLjBAAAAAElFTkSuQmCC);
+    background-size: 1.3125rem 1.3125rem;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+.head-sign {
+    position: absolute;
+    top: 0;
+    right: 5.46875%;
+    display: inline-block;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    color: #fff;
+    font-size: 0.9375rem;
+}
+.footer-title {
+    position: fixed;
+    bottom: 0;
+    height: 3.0625rem;
+    width: 100%;
+    background-color: #fff;
+    font-size: 0.5625rem;
+    z-index: 9;
+    overflow: hidden;
+    li {
+        float: left;
+        width: 25%;
+        height: 3.0625rem;
+        text-align: center;
+        span {
+            height: 1.5625rem;
+            display: inherit;
+            margin-top: 0.34375rem;
+            &.footerIndex {
+                background: url(../img/iIndex.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.footerTransaction {
+                background: url(../img/iTransaction.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.footerDetection {
+                background: url(../img/iDetection.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.footerMyself {
+                background: url(../img/iMyself.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+        }
+        em {
+            display: block;
+            line-height: 1.125rem;
+            color: #9e9d9d;
+        }
+        &.current {
+            span {
+                filter: grayscale(0);
+                -webkit-filter: grayscale(0);
+            }
+            em {
+                color: #f64353;
+            }   
+        }
+    }
+}
+.mt5 {
+    margin-top: 5%;
+}
+.mt10 {
+    margin-top: 10%;
+}
+.mt15 {
+    margin-top: 15%;
+}
+.loginInfo {
+    z-index: 8;
+    ul {
+        border-radius: 3px;
+        overflow: hidden;
+        background-color: #fff;
+        li {
+            height: 2.8125rem;
+            box-sizing: border-box;
+            padding-left: 60px;
+            position: relative;
+            &:nth-of-type(1){
+                &:after {
+                    content: "";
+                    border-bottom: 1px solid #e1e1e1;
+                    width: 100%;
+                    position: absolute;
+                    z-index: 999;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+            &.loginTelephone {
+                background: url(../img/itelephone.png) no-repeat 21px center;
+                background-size: 16px auto;
+            }
+            &.loginName {
+                background: url(../img/iname.png) no-repeat 21px center;
+                background-size: 16px auto;
+            }
+            &.loginCode {
+                background: url(../img/ipwd.png) no-repeat 21px center;
+                background-size: 16px auto;
+            }
+            input {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                font-size: 0.875rem;
+                border: none;
+                &::-webkit-input-placeholder {
+                    color: #555;
+                }
+            }
+            .getCode {
+                position: absolute;
+                right: 15px;
+                bottom: 0;
+                line-height: 2.8125rem;
+                color: #555;
+                font-size: 0.875rem;
+            }
+        }
+    }
+    .loginProtocol {
+        height: 25px;
+        line-height: 25px;
+        color: #f2bec5;
+        span {
+            float: left;
+            width: 25px;
+            height: 100%;
+            &.unselect {
+                background: url(../img/icheck.png) no-repeat left center; background-size: auto 20px;
+            }
+            &.select {
+                background: url(../img/ichecked.png) no-repeat left center; background-size: auto 20px;
+            } 
+        }
+        a {
+            color: #f2bec5;
+        }
+    }
+    .btnInfo {
+        button {
+            color: #f64353;
+            height: 2.8125rem;
+            line-height: 2.8125rem;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 3px;
+            border: none;
+            width: 100%;
+            font-size: 1.0625rem;
+        }
+    }
+    .loginBottom {
+        a {
+            color: #f2bec5;
+            font-size: 0.875rem;
+            margin: 0 2%;
+            &:nth-of-type(2){
+                float: right;
+            }
+        }
+    }
+    .loginAvatar {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
+        box-sizing: border-box;
+        border: 4px solid #f899a9;
+        position: relative;
+        margin: 0 auto;
+        background: url('../img/avatar.png') no-repeat;
+        background-size: contain;
+        span {
+            height: 2.6rem;
+            width: 2.6rem;
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 1.3rem;
+            border: 2px solid rgba(255,255,255,0.4);
+        }
+        .editAvtar {
+            top: 0;
+            left: 0;
+            background: #fff url('../img/iavatar.png') center center no-repeat;
+            background-size: 50% auto;
+            background-clip: padding-box;
+        }
+        .editInfo {
+            bottom: 0;
+            right: 0;
+            background: #fff url('../img/iedit.png') center center no-repeat;
+            background-size: 50% auto;
+            background-clip: padding-box;
+        }
+    }
+    .loginMyname {
+        font-size: 1.5625rem;
+        color: #fff;
+        text-align: center;
+    }
+    .registInfo {
+        .registSuccess {
+            .registImg {
+                height: 4rem;
+                background: url('../img/success.png') center center no-repeat;
+                background-size: contain;
+            }
+        }
+        .registTip {
+            font-size: 0.875rem;
+            color: #f2bec5;
+            text-align: center;
+        }
+    }
+}
+.securityLevel { padding-top: 29px;
+    .levelBox {
+        margin: 0 auto;
+        width: 67.1875%;
+        height: 15px;
+        background-color: #eeecec;
+        border-radius: 2px;
+        ul {
+            overflow:hidden;
+        }
+        li {
+            float: left;
+            width: 25%;
+            height: 15px;
+        }
+    }
+    .levelOne {
+        li {
+            &:nth-of-type(1) {
+                background-color: #85f18a;
+            }
+        }      
+    }
+    .levelTwo {
+        li {
+            &:nth-of-type(1) {
+                background-color: #85f18a;
+            }
+            &:nth-of-type(2) {
+                background-color: #6de173;
+            }
+        }      
+    }
+    .levelThree {
+        li {
+            &:nth-of-type(1) {
+                background-color: #85f18a;
+            }
+            &:nth-of-type(2) {
+                background-color: #6de173;
+            }
+            &:nth-of-type(3) {
+                background-color: #5dca63;
+            }
+        }      
+    }
+    .levelFour {
+        li {
+            &:nth-of-type(1) {
+                background-color: #85f18a;
+            }
+            &:nth-of-type(2) {
+                background-color: #6de173;
+            }
+            &:nth-of-type(3) {
+                background-color: #5dca63;
+            }
+            &:nth-of-type(4) {
+                background-color: #41b047;
+            }
+        }      
+    }
+    .levelShow {
+        text-align: center;
+        color: #333;
+        font-size: 0.875rem;
+        line-height: 40px;
+    }
+}
+.infoReveal {
+    li {
+        display: -webkit-box;
+        span {
+            width: 15.3125%;
+            display: inherit;
+            &.nickName {
+                background: url(../img/iNickName.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.setAvatar {
+                background: url(../img/iSetAvatar.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.realName {
+                background: url(../img/iRealName.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.withdraw {
+                background: url(../img/iWithdraw.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.phoneBind {
+                background: url(../img/iPhoneBind.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.wechat {
+                background: url(../img/iWechat.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.loginPwd {
+                background: url(../img/iLoginPwd.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.withdrawal {
+                background: url(../img/iWithdrawal.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+            &.signOut {
+                background: url(../img/iSignOut.png) no-repeat center center;
+                background-size: 18px auto;
+            }
+        }
+        div {
+            -webkit-box-flex: 1;
+            border-bottom: 1px solid #eee;
+            line-height: 2.6875rem;
+            em {
+                font-size: 0.875rem;
+                color: #333;
+                float: left;
+            }
+            p {
+                font-size: 0.75rem;
+                color: #999;
+                float: right;
+                padding-right: 13.25%;
+            }
+        }
+        &:last-child{
+            div {
+                border-bottom: none;
+            }
+        }
+    }
+}
+.myself {
+    padding-bottom: 3.0625rem;
+}
+.myselfInfo {
+    background-color: #f64353;
+    .myselfInfoTop {
+        position: relative;
+        height: 5.0625rem;
+        line-height: 5.0625rem;
+        text-align: center;
+        color: #fff;
+        font-size: 1.0625rem;
+        .infoTopNews {
+            position: absolute;
+            width: 5.9375%;
+            height: 30%;
+            right: 4.84375%;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            background: url(../img/iInfoNews.png) no-repeat center center;
+            background-size: 100% auto;
+        }
+    }
+    .myselfAvatar {
+        width: 6.40625rem;
+        height: 6.40625rem;
+        border-radius: 3.484375rem;
+        margin: 0 auto;
+        border: 0.28125rem solid #fba5ad;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .myselfLogin {
+        text-align: center;
+        padding: 0.8125rem 0;
+        a {
+            width: 10.9375%;
+            height: 0.9375rem;
+            line-height: 0.9375rem;
+            font-size: 0.625rem;
+            text-align: center;
+            border: 0.0625rem solid #fff;
+            border-radius: 0.53125rem;
+            color: #fff;
+            display: inline-block;
+            margin: 0 1.875%;
+            &.current {
+                background-color: #fff;
+                color: #f64353;
+            }
+        }
+    }
+    .myselfCharacter {
+        padding-bottom: 1.28125rem;
+        padding-left: 5%;
+        display: -webkit-box;
+        span {
+            width: 3.6875rem;
+            height: 3.6875rem;
+            display: inline-block;
+            border: 0.25rem solid #fba5ad;
+            border-radius: 2.09375rem;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        div {
+            margin: 0 3.75%;
+            padding-top: 0.9375rem;
+            color: #fff;
+            -webkit-box-flex: 1;
+            p {
+                font-size: 0.9375rem;
+                height: 1.34375rem;
+                line-height: 1.34375rem;
+                overflow: hidden;
+            }
+        }
+    }
+}
+.myselfOperating {
+    height: 3.0625rem;
+    background-color: #ca3845;
+    ul {
+        display: -webkit-box;
+        padding-top: 0.65625rem;
+    }
+    li {
+        height: 1.75rem;
+        line-height: 1.75rem;
+        text-align: center;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -webkit-box-flex: 1;
+        span {
+            color: #fff;
+            padding-left: 23.75%;
+            height: 100%;
+            display: inline-block;
+            font-size: 0.9375rem;
+            &.myWithdraw {
+                background: url(../img/imyWithdraw.png) no-repeat left center;
+                background-size: auto 100%;
+            }
+            &.recharge {
+                background: url(../img/iRecharge.png) no-repeat left center;
+                background-size: auto 100%;
+            }
+        }
+        &:nth-of-type(1) {
+            border-right: 1px solid #eaafb5;
+        }
+    }
+}
+.myselfFeatures {
+    ul {
+        overflow: hidden;
+        padding: 0.75rem 0 1.6875rem 0;
+    }
+    li {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        margin-top: 1.25rem;
+        a {
+            display: block;
+        }
+        span {
+            height: 2.71875rem;
+            display: inherit;
+            &.fundingDetails {
+                background: url(../img/iFundingDetails.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.transactionRecord {
+                background: url(../img/iTransactionRecord.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.myScores {
+                background: url(../img/iMyScores.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.myOffers {
+                background: url(../img/iMyOffers.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.personalInfo {
+                background: url(../img/iPersonalInfo.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.promotion {
+                background: url(../img/iPromotion.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.myOrder {
+                background: url(../img/iMyOrder.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.mySignOut {
+                background: url(../img/imySignOut.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+        }
+        p {
+            font-size: 0.75rem;
+            color: #555;
+            line-height: 1.625rem;
+        }
+    }
+}
+.indexMenu {
+    overflow: hidden;
+    li {
+        float: left;
+        width: 25%;
+        text-align: center;
+        padding: 1.3125rem 0 0.625rem;
+        a {
+            display: block;
+        }
+        span {
+            height: 2.71875rem;
+            display: inherit;
+            &.activityArea {
+                background: url(../img/iActivityArea.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.taskCenter {
+                background: url(../img/iTaskCenter.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.trader {
+                background: url(../img/iTrader.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+            &.transactionLive {
+                background: url(../img/iTransactionLive.png) no-repeat center center;
+                background-size: auto 100%;
+            }
+        }
+        p {
+            font-size: 0.75rem;
+            color: #555;
+            line-height: 1.375rem;
+        }
+    }
+}
+.indexHot {
+    padding-bottom: 1.0625rem;
+    .indexHotTitle {
+        line-height: 2.5625rem;
+        padding-left: 5%;
+        font-size: 0.8125rem;
+    }
+    ul {
+        overflow: hidden;
+    }
+    li {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        border-right: 0.0625rem solid #dfdfdf;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        .indexHotData {
+            span {
+                font-size: 1.3125rem;
+                line-height: 1.5625rem;
+                display: inherit;
+            }
+            em {
+                font-size: 0.5625rem;
+                line-height: 0.8125rem;
+                display: inherit;
+            }
+            &.up {
+                color: #f64353;
+            }
+            &.down {
+                color: #299f63;
+            }
+        }
+        p {
+            padding: 0.5625rem 0 0.125rem 0;
+            span {
+                color: #333;
+                font-size: 0.8125rem;
+            }
+            em {
+                color: #fff;
+                line-height: 0.75rem;
+                font-size: 0.4375rem;
+                background-color: #f55567;
+                display: inline-block;
+                padding: 0 4.6%;
+                border-radius: 0.375rem;
+            }
+        }
+        &:last-child{
+            border-right: none;
+        }
+    }
+}
+.indexHeavyMessages {
+    padding-bottom: 0.1875rem;
+    .heavyMessagesTitle {
+        line-height: 2.8125rem;
+        padding-left: 5%;
+        font-size: 0.8125rem;
+    }
+    ul {
+        margin-left: 5.625%;
+        border-left: 0.03125rem solid #dfdfdf;
+        padding-bottom: 0.5625rem;
+        li {
+            position: relative;
+            margin-left: 6.75%;
+            padding-right: 5.6%;
+            padding-bottom: 1rem;
+            padding-top: 0.6875rem;
+            border-bottom: 0.03125rem solid #dfdfdf;
+            p {
+                color: #333;
+                font-size: 0.875rem;
+                line-height: 1.125rem;
+                padding-bottom: 0.4375rem;
+            }
+            span {
+                position: relative;
+                background-color: #ebebeb;
+                line-height: 0.84375rem;
+                padding: 0 2% 0 1%;
+                display: inline-block;
+                border-radius: 0.1875rem;
+                font-size: 0.5rem;
+                color: #606366;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 0.1875rem;
+                    height: 0.1875rem;
+                    left: -0.1875rem;
+                    top: 0.421875rem;
+                    background-color: #ebebeb;
+                }
+            }
+            &:first-child{
+                padding-top: 0;
+            }
+            &:last-child{
+                border-bottom: none;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                width: 0.3125rem;
+                height: 0.3125rem;
+                bottom: 1.2rem;
+                left: -6.75%;
+                transform: translateX(-75%);
+                -webkit-transform: translateX(-75%);
+                background-color: #dfdfdf;
+                border: 0.0625rem solid #fff;
+                border-radius: 0.2187rem;
+            }
+            &.current {
+                &:before {
+                    background-color: #f64353;
+                    border-color: #f64353;
+                }
+            }
+        }
+    }
+}
