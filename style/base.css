@@ -1006,3 +1006,42 @@ body {
   background-color: #f64353;
   border-color: #f64353;
 }
+/*弹窗*/
+.shade {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  background: #fff;
+  width: 70%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  border-radius: 6px;
+  line-height: 1.4;
+}
+.popup .content {
+  padding: 20px;
+}
+.popup .button {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  border-top: solid 1px #e5e5e5;
+  color: #268bf2;
+  font-size: 14px;
+}

@@ -10,4 +10,16 @@ function is_weixn(){
         return false;  
     }  
 }
+
+// 弹窗
+function showpop(msg,btname){
+	var pop = "<div class='shade'><div class='popup'><p class='content'>"+msg+"</p><a href='javascript:;' class='button'>"+btname+"</a></div></div>";
+	$('body').append(pop);
+	$('.shade , .popup').show();
+	$('.popup .button').on('click',function(){
+		$('.shade , .popup').remove();
+		$('.popup .button').off('click');
+	});
+}
+
 })();
