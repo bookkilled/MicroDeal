@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html">
+<meta content="width=device-width,minimum-scale=1.00001,maximum-scale=1.00001,user-scalable=no" name="viewport">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection">
+<!-- UC默认竖屏 ，UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<!-- QQ强制竖屏 QQ强制全屏 -->
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-page-mode" content="app">
+<meta name="format-detection" content="email=no" />
+<meta name="msapplication-tap-highlight" content="no">
+<link href="style/base.css" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+<header class="head-title">
+    <a href="javascript:void(0);" class="head-title-back"></a>
+    <p>银行卡支付</p>
+    <a href="javascript:void(0);" class="head-txt-r">充值记录</a>
+</header>
+<div class="main">
+    <section class="summary">
+        <div class="text-minor">
+            账户余额 <em class="text-stress">0.00</em>
+        </div>
+    </section>
+    <section class="grid-box mt-10">
+        <div class="row">
+            <div class="col-both">
+                <span>充值金额</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="number" class="col-input col-input-right" placeholder="请输入金额">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="cardlist">
+            <div class="col-both">
+                <span>支付银行</span>
+            </div>
+            <div class="col-both">
+                <span class="mr-20">请选择银行</span>
+                <span class="no-checked"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>银行卡号</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入银行卡号">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>持卡人姓名</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入持卡人姓名">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>身份证号</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入持卡人身份证号">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="btn-box">
+        <button class="btn btn-block btn-disabled">去支付</button>
+    </section>
+    <section class="ps">
+        <a href="javascript:0;" class="text-link">常见问题</a>
+    </section>
+</div>
+<div class="mask">
+    <div class="pop wp100 maxhp75">
+        <ul class="banklist-cus">
+            <li class="bank-icon bank-gs" data-value="工商银行">工商银行</li>
+            <li class="bank-icon bank-js" data-value="建设银行">建设银行</li>
+            <li class="bank-icon bank-nh" data-value="农业银行">农业银行</li>
+            <li class="bank-icon bank-zs" data-value="招商银行">招商银行</li>
+            <li class="bank-icon bank-zgyh" data-value="中国银行">中国银行</li>
+            <li class="bank-icon bank-jt" data-value="交通银行">交通银行</li>
+            <li class="bank-icon bank-yz" data-value="邮政储蓄">邮政储蓄</li>
+            <li class="bank-icon bank-ms" data-value="民生银行">民生银行</li>
+            <li class="bank-icon bank-pf" data-value="浦发银行">浦发银行</li>
+            <li class="bank-icon bank-xy" data-value="兴业银行">兴业银行</li>
+            <li class="bank-icon bank-hx" data-value="华夏银行">华夏银行</li>
+            <li class="bank-icon bank-gd" data-value="光大银行">光大银行</li>
+            <li class="bank-icon bank-gf" data-value="广发银行">广发银行</li>
+            <li class="bank-icon bank-zx" data-value="中信银行">中信银行</li>
+            <li class="bank-icon bank-pa" data-value="平安银行">平安银行</li>
+            <li class="bank-icon bank-ns" data-value="农商银行">农商银行</li>
+        </ul>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</body>
+<script type="text/javascript">
+$('#cardlist').on('click', function () {
+    $('.mask,.pop').show();
+});
+$('.banklist-cus li').each(function () {
+    $(this).on('click', function () {
+        $('.mask,.pop').hide();
+    });
+});
+</script>
+</html>
