@@ -1,5 +1,5 @@
 @font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@body-bg: #fff;
+@body-bg: #f9f9f9;
 @small-font-size: 12px;
 @mid-font-size: 16px;
 @big-font-size: 18px;
@@ -887,8 +887,168 @@ html,body {
         background: #fff;
     }
 }
+/*身份认证*/
+.banklist {
+    max-height: 75%;
+    overflow-y: auto;
+    li {
+        padding: 9px 20px 7px;
+        border-top: 1px solid #e5e5e5;
+        white-space: nowrap;
+        &:first-child {
+            border-top: 0
+        }
+    }
+}
+
+/*表单样式*/
+.mt-10 {
+    margin-top: 10px;
+}
+.mr-15 {
+    margin-right: 15px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.grid-box {
+    position: relative;
+    width: 100%;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 200%;
+        height: 0;
+        border-bottom: 1px solid #ddd;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        -webkit-transform: scale3d(.5, .5, .5);
+        transform: scale3d(.5, .5, .5);
+        top: -1px
+    }
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 51px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background-color: #fff;
+    .col-both {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: inherit;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        &:first-child {
+            margin-left: 3%;
+            font-size: 14px;
+            color: #4a4a4a;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+        &:last-child {
+            margin-right: 3%;
+            font-size: 14px;
+            color: #999;
+            text-align: right;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end
+        }
+        .no-checked {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            width: 8px;
+            height: 100%;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAVCAYAAAByrA+0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4MDEwMTA3MzQxMjA2ODExODIyQTk1Qzc3M0M2QUYwQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOUU1RDJDRjk0REUxMUU1QTJGRkZFNDNEQkM0MDA1MSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOUU1RDJDRTk0REUxMUU1QTJGRkZFNDNEQkM0MDA1MSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2Y2I4Y2FkNi0xZDQxLTQ4ZjYtYTM5Yy1kZWY4ZTY4N2Q2YWMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODAxMDEwNzM0MTIwNjgxMTgyMkE5NUM3NzNDNkFGMEEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6UzsvlAAAAu0lEQVR42oySQQ7CIBBFAbeegVUvJtqlRuMZXGtcmVjwXN5Dt9I/phhsKTOTvKRl/guBQXvvT0qpHXiAvXPuoyplwBEswRZ0IQTDCbfsf8VJ1DgAL5V0jFGhqfF9B+usR2fajM/0Faik0k+QSn+CRJoInFQUKtJ1VhgkutonaIall6mE0w5Nvmwq4Q64fJmGPHdLpXA7uSUuXJp0NTx+S2yYamGtFYfT875Iw0lopeEknMGbxs6FqXoBBgDD5oSwYjubvwAAAABJRU5ErkJggg==);
+            background-size: 8px 14px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            }
+    }
+    ::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 200%;
+        height: 0;
+        border-bottom: 1px solid #ddd;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        -webkit-transform: scale3d(.5, .5, .5);
+        transform: scale3d(.5, .5, .5);
+        bottom: 0
+    }
+}
+.col-input {
+    height: auto;
+    line-height: 1;
+    padding: 0 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 14px
+}
+.col-input-right {
+    width: 85%;
+    text-align: right
+}
+.btn-box {
+  padding: 0 15px;
+  margin: 20px 0;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 0;
+  white-space: nowrap;
+  padding: 15px 0;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 4px;
+}
+.btn-default {
+  color: #fff;
+  background-color: #f64353;
+}
+.btn-disabled {
+  background: #95a1bf !important;
+  color: #fff;
+}
+.btn-disable {
+  color: #ccc;
+  background-color: transparent;
+}
+
 /*弹窗*/
-.shade{ display: none; position: fixed;top: 0;left: 0;right:0;bottom:0;width: 100%;height: 100%;background:rgba(0,0,0,0.3);z-index:10;}
+.shade,.mask{ display: none; position: fixed;top: 0;left: 0;right:0;bottom:0;width: 100%;height: 100%;background:rgba(0,0,0,0.3);z-index:10;}
 .popup{
     display: none;
     position: absolute;
@@ -915,3 +1075,17 @@ html,body {
         font-size: 14px;
     }
 }
+.pop {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    border-radius: 6px;
+    width: 75%;
+}
+

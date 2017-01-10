@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html">
+<meta content="width=device-width,minimum-scale=1.00001,maximum-scale=1.00001,user-scalable=no" name="viewport">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection">
+<!-- UC默认竖屏 ，UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<meta name="browsermode" content="application">
+<!-- QQ强制竖屏 QQ强制全屏 -->
+<meta name="x5-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="x5-page-mode" content="app">
+<meta name="format-detection" content="email=no" />
+<meta name="msapplication-tap-highlight" content="no">
+<link href="style/base.css" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+<header class="head-title">
+    <a href="javascript:void(0);" class="head-title-back"></a>
+    <p>身份认证</p>
+</header>
+<div class="main">
+    <section class="grid-box mt-10">
+        <div class="row" id="cardlist" data-source="{data:['工商银行','建设银行','农业银行','招商银行','中国银行','交通银行','邮政储蓄','民生银行','浦发银行','兴业银行','华夏银行','光大银行','广发银行','中信银行','平安银行','农商银行']}">
+            <div class="col-both">
+                <span>银行名称</span>
+            </div>
+            <div class="col-both">
+                <span class="mr-20">请选择银行</span>
+                <span class="no-checked"></span>
+            </div>
+        </div>
+    </section>
+    <section class="grid-box mt-10">
+        <div class="row">
+            <div class="col-both">
+                <span>银行卡号</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入您的银行卡号">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>持卡人</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入您的姓名">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>身份证号</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="请输入您的身份证号">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-both">
+                <span>手机号码</span>
+            </div>
+            <div class="col-both">
+                <div class="wp100">
+                    <input type="text" class="col-input col-input-right" placeholder="银行预留手机号">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="btn-box">
+        <button class="btn btn-block btn-default">确定认证</button>
+    </section>
+</div>
+<div class="mask">
+    <div class="pop">
+        <ul class="banklist">
+            <li data-value="工商银行">工商银行</li>
+            <li data-value="建设银行">建设银行</li>
+            <li data-value="农业银行">农业银行</li>
+            <li data-value="招商银行">招商银行</li>
+            <li data-value="中国银行">中国银行</li>
+            <li data-value="交通银行">交通银行</li>
+            <li data-value="邮政储蓄">邮政储蓄</li>
+            <li data-value="民生银行">民生银行</li>
+            <li data-value="浦发银行">浦发银行</li>
+            <li data-value="兴业银行">兴业银行</li>
+            <li data-value="华夏银行">华夏银行</li>
+            <li data-value="光大银行">光大银行</li>
+            <li data-value="广发银行">广发银行</li>
+            <li data-value="中信银行">中信银行</li>
+            <li data-value="平安银行">平安银行</li>
+            <li data-value="农商银行">农商银行</li>
+        </ul>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+</body>
+<script type="text/javascript">
+$('#cardlist').on('click', function () {
+    $('.mask,.pop').show();
+});
+$('.banklist li').each(function () {
+    $(this).on('click', function () {
+        $('.mask,.pop').hide();
+    });
+});
+</script>
+</html>
