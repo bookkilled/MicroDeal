@@ -47,7 +47,7 @@
                 <span>支付银行</span>
             </div>
             <div class="col-both">
-                <span class="mr-20">请选择银行</span>
+                <span class="mr-20" id="bankname">请选择银行</span>
                 <span class="no-checked"></span>
             </div>
         </div>
@@ -121,6 +121,7 @@ $('#cardlist').on('click', function () {
 $('.banklist-cus li').each(function () {
     $(this).on('click', function () {
         $('.mask,.pop').hide();
+        $('#bankname').html($(this).attr('data-value'));
     });
 });
 </script>
