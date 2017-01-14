@@ -80,7 +80,7 @@ html,body {
     &::before {
         content: "";
         position: absolute;
-        top: 1rem;
+        top: .9rem;
         left: 17px;
         display: block;
         width: 0.8125rem;
@@ -232,6 +232,12 @@ html,body {
 }
 .mt15 {
     margin-top: 15%;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.cff4544 {
+    color: #ff4544;
 }
 .loginInfo {
     z-index: 8;
@@ -1029,7 +1035,7 @@ html,body {
     }
 }
 /*买入页*/
-.buy {
+.zhidian {
     .detail {
         padding: 1rem;
         background: #fff;
@@ -1137,6 +1143,26 @@ html,body {
         padding: .2rem 1rem;
         background: #fff;
     }
+}
+.recharge {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    background-color: #ffb422;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 1rem;
+    em {
+        display: inline-block;
+        height: 2rem;
+        width: 1.2rem;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAhCAYAAADH97ugAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjODRjZGYzYy04YjBhLTIxNDUtYmYxMS00ZmJhYTJjZWZmNmIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjBBNzY3ODdDRTJDMTFFNkJCNjNDODkzREJDQzM0NUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjBBNzY3ODZDRTJDMTFFNkJCNjNDODkzREJDQzM0NUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Y2Q2YWE5NjUtM2NjNC00MDNkLWI4ZDctNTM2MTAxNDkyZmY1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmM4NGNkZjNjLThiMGEtMjE0NS1iZjExLTRmYmFhMmNlZmY2YiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ptcf2hcAAAJeSURBVHjarNdLSBVRHMfxyeyhYFFJLoqCMiKK6EJI3BZCbdoU1cJFD4Ro0apNtQshcteDIIxaRJuixyKz3LeRKHpAYqGUFVRoipIFYpZN34n/1Enn/P9nrh34wL0z58xv7syc/5wbxXEceazEMzzGCizFOdxEQfrsQQt2yvcZKMs63uQNdfiIi3gS/21dGHS+D6M5/rd1YARtIUFr8CWeXmsOCUrsm0bIPcwMDUrcKiGkHwt899wXtASjOYMOKw+WNyhxPkfIDyzSgsoif7sahbdeDGkdtKDnOYJGrA5a0OIcQctKDarClRxBNdih9si4cQul9ORtn7E69KmrxEPlYENSmt549r+QY5hBN4yzvuYUU1+7YAXtN0J6pE9aEy+jL6PfT2z1BVXhkxJyEuUZZzoHTRn9u2XflKDjSkibNuNxKKQkRVJtPyhBu5wBm9CO69iOCmVsv+z/E1Q07k29E3Rs0r5XxthGt9bVGZOx6Hw+hS1oxQRqjbGN7oQ9GzARCxn3phatxthxzEt/0VzjrOajA0dQ4Wx/jd1oUcbOQiGtdYMBtawSp/EOJ1CdXhAcxbAydnka1BkQ1I4BqehN6HKuxBi6jV8VleM+xjHb0/ElGuSyHcRmObmxwFdKn1u9tRpXNCZsvfGKr3YrwzrZmNUeYa0nZIMx2e9kFVXtMZ/AA+yVvutxF9+VMV9lKT0lKCkXT//DayK9ZA3a+yhZyL83zrLXqPQD2BayrluFzhJe5ckC/0x680MXkElFP4C3gSG3UVPqSjUNTC7DJfnr8s15OHpk+0bjGL/9EmAAt7+6Synvwf8AAAAASUVORK5CYII=');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 60% auto;
+        vertical-align: top;
+    } 
 }
 
 /*表单样式*/
@@ -1349,8 +1375,17 @@ html,body {
     left: 0;
     right: 0;
 }
+.btn-box-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 .fix-btn-page {
     padding-bottom: 6rem;
+}
+.fix-btn-page-b {
+    padding-bottom: 4rem;
 }
 .btn {
   display: inline-block;
@@ -1377,6 +1412,30 @@ html,body {
     color: #f64353;
     background-color: transparent;
     border: solid 1px #f64353;
+}
+.btn-three {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    width: 33%;
+    height: 3.6rem;
+    color: #fff;
+    line-height: 3.6rem;
+    font-size: 1.2rem;
+    text-align: center;
+    &.mr {
+        left: 33%;
+        width: 34%;
+        background-color: #f64353;
+    }
+    &.mc {
+        right: 0;
+        background-color: #299f63;
+    }
+    &.cc {
+        left: 0;
+        background-color: #555555;
+    }
 }
 .btn-disabled {
   background: #a7a9af !important;
