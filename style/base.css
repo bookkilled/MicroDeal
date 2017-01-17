@@ -1349,8 +1349,14 @@ body {
 }
 /* 持仓页 */
 .position-page {
-  padding: .2rem 1rem;
+  padding: .8rem 1rem;
   background: #fff;
+  margin-bottom: .5rem;
+  border-top: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+}
+.position-page:first-child {
+  border-top: 0;
 }
 .position-page .detail .show {
   position: relative;
@@ -1366,6 +1372,27 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+}
+.position-page .detail .show .btn {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 4rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: .75rem;
+  border-radius: .2rem;
+  padding: 0;
+}
+.position-page .detail .show .buying {
+  border: solid 1px #f64353;
+  color: #f64353;
+  background-color: #ffeaec;
+}
+.position-page .detail .show .fail {
+  border: solid 1px #999999;
+  color: #999999;
+  background-color: #f4f3f3;
 }
 .position-page .detail .show .setprice {
   display: inline-block;
@@ -1406,6 +1433,41 @@ body {
   bottom: 0;
   right: 0;
 }
+.setprice-box {
+  padding: .5rem;
+  color: #333333;
+  font-size: .75rem;
+}
+.setprice-box p.tit {
+  padding-bottom: .4rem;
+  margin-bottom: .4rem;
+  border-bottom: solid 1px #e1e1e1;
+}
+.setprice-box .detail p {
+  margin: .4rem 0;
+  font-size: .75rem;
+  color: #333333;
+}
+.setprice-box .detail p .inp {
+  width: 3.8rem;
+  border-radius: .2rem;
+  padding: .2rem;
+  border: solid 1px #eee;
+  margin: 0 .2rem;
+}
+.setprice-box .detail p .subtn {
+  display: inline-block;
+  padding: .2rem 0;
+  width: 3.8rem;
+  text-align: center;
+  color: #f64353;
+  border: solid 1px #f64353;
+  border-radius: .2rem;
+}
+.setprice-box .detail p:last-child {
+  text-align: center;
+  margin-top: .5rem;
+}
 /*表单样式*/
 .mt-10 {
   margin-top: 10px;
@@ -1421,6 +1483,9 @@ body {
 }
 .wp100 {
   width: 100%;
+}
+.wp90 {
+  width: 90%;
 }
 .wp75 {
   width: 75%;
@@ -1741,4 +1806,7 @@ body {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+}
+.bdr {
+  border-radius: .2rem;
 }
