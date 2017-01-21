@@ -30,7 +30,7 @@
     <section class="detail">
         <ul class="state">
             <li><span class="name">苏宁云商 </span><em class="code">(002024.SZ)</em></li>
-            <li><input type="text" name="security" class="inpname" placeholder="输入买入股票名称" /></li>
+            <li class="search-form"><input type="text" id="security" name="security" class="inpname" placeholder="输入买入股票名称" autocomplete="off" /></li>
             <li><p class="bignum">11.58 <i class="icon-up"></i></p></li>
             <li><p class="num">-0.18</p><p class="num">-1.53%</p></li>
         </ul>
@@ -89,6 +89,21 @@
             $(this).parents('ul').find('li a').removeClass('active');
             $(this).addClass('active');
             $('.map-con').html($(this).html());// 这边是动态填入图表数据的
+        });
+    });
+    var proposals = ['at', 'boat', 'bear', 'chief', 'dog', 'drink', 'elephant', 'fruit', 'grave', 'hotel', 'illness', 'London', 'motorbike', '中通快递', '阿里巴巴', '苏宁云商'];
+    $('#security').on('onchange input', function(){
+        $('.resbox') && $('.resbox').remove();
+        var searchtxt = $(this).val();
+        console.log(searchtxt);
+        var arr = proposals.filter(function(item, index){return !!searchtxt && item.indexOf(searchtxt)> -1})
+        console.log(arr);
+        !!arr.length && $('.search-form').append('<ul class="resbox"><li>'+arr.join("</li><li>")+'</li></ul>');
+        $('.resbox li') && $('.resbox li').each(function(){
+            $(this).on('click', function(){
+                $('#security').val($(this).html());
+                $('.resbox') && $('.resbox').remove();
+            });
         });
     });
 </script>

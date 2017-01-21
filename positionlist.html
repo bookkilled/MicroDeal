@@ -118,10 +118,30 @@
         </section>
     </div>
 </div>
+<div class="mask">
+    <div class="pop wp90 bdr">
+        <div class="setprice-box">
+            <p class="tit">股票信息：苏宁云商(SZ002024)</p>
+            <div class="detail">
+                <p><span>现价：12.37元</span> <span>成本价：12.37元</span> <span>持股数量：1122</span></p>
+                <p>设定现价:<input class="inp" type="number" />设定止损:<input class="inp" type="number" /></p>
+                <p>设定平仓:<input class="inp" type="number" />支付密码:<input class="inp" type="password" /></p>
+                <p><a class="subtn" href="javascript:;">提交</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 <script type="text/javascript">
-
+    $('.buying').on('click',function(){
+        $('.mask, .pop').show();
+    });
+    $('.subtn').on('click',function(){
+        $('.mask, .pop').hide();
+        showstatus('恭喜您，购买成功！','确定');
+    });
 </script>
 </html>

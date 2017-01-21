@@ -1231,22 +1231,22 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.zhidian .detail .state li {
+.zhidian .detail .state > li {
   height: 2rem;
   line-height: 2rem;
   width: 50%;
   padding: .2rem 0;
   margin-bottom: .4rem;
 }
-.zhidian .detail .state li .name {
+.zhidian .detail .state > li .name {
   font-size: 1rem;
   color: #333;
 }
-.zhidian .detail .state li .code {
+.zhidian .detail .state > li .code {
   font-size: .75rem;
   color: #f64353;
 }
-.zhidian .detail .state li .inpname {
+.zhidian .detail .state > li .inpname {
   height: inherit;
   padding-left: .5rem;
   border: solid 1px #ece6e6;
@@ -1254,12 +1254,12 @@ body {
   width: 96%;
   border-radius: .2rem;
 }
-.zhidian .detail .state li .bignum {
+.zhidian .detail .state > li .bignum {
   color: #f64353;
   font-size: 1.6rem;
   text-align: center;
 }
-.zhidian .detail .state li .icon-up {
+.zhidian .detail .state > li .icon-up {
   display: inline-block;
   width: 1rem;
   height: 1.6rem;
@@ -1268,11 +1268,32 @@ body {
   background-size: auto 80%;
   background-position: bottom right;
 }
-.zhidian .detail .state li .num {
+.zhidian .detail .state > li .num {
   font-size: .875rem;
   color: #f64353;
   text-align: center;
   line-height: 1;
+}
+.zhidian .detail .state .search-form {
+  position: relative;
+}
+.zhidian .detail .state .search-form .resbox {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  padding-right: 2px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  border: solid 1px #e5e5e5;
+  border-bottom: 0;
+}
+.zhidian .detail .state .search-form .resbox li {
+  border-bottom: solid 1px #e5e5e5;
+  height: 2rem;
+  padding-left: .5rem;
+  line-height: 2rem;
 }
 .zhidian .detail .change {
   display: -webkit-flex;
