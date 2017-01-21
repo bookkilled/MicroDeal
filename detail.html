@@ -84,6 +84,12 @@
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 </body>
 <script type="text/javascript">
-
+    $('.map-tab a').each(function(){
+        $(this).on('click',function(){
+            $(this).parents('ul').find('li a').removeClass('active');
+            $(this).addClass('active');
+            $('.map-con').html($(this).html());// 这边是动态填入图表数据的
+        });
+    });
 </script>
 </html>

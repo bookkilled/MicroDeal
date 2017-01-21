@@ -38,7 +38,8 @@
             <span class="tip">委托购买中</span>
         </div>
         <div class="deal">
-            <p>设定止盈:<input class="inp" type="number" />设定止损:<input class="inp" type="number" />设定平仓:<input class="inp" type="number" /></p>
+            <p>设定止盈:<span class="txt">9.9999</span>设定止损:<span class="txt">9.9999</span></p>
+            <p>设定平仓:<span class="txt">9.9999</span></p>
             <p>系统止盈：14.84元 系统止损：10.98元</p>
             <p>完成时间：2016/12/25</p>
             <span class="tip">委托购买中</span>
@@ -49,8 +50,8 @@
     </section>
 </div>
 </div>
-<div class="mask" style="display: block;">
-    <div class="pop wp90 bdr" style="display: block;">
+<div class="mask">
+    <div class="pop wp90 bdr">
         <div class="setprice-box">
             <p class="tit">股票信息：苏宁云商(SZ002024)</p>
             <div class="detail">
@@ -64,8 +65,15 @@
 </div>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 <script type="text/javascript">
-
+    $('.setprice').on('click',function(){
+        $('.mask, .pop').show();
+    });
+    $('.subtn').on('click',function(){
+        $('.mask, .pop').hide();
+        showpop('恭喜您，购买成功！','确定');
+    });
 </script>
 </html>

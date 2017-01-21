@@ -1,4 +1,3 @@
-(function(){
 'use strict';
 
 // 是否微信
@@ -21,5 +20,3 @@ function showpop(msg,btname){
 		$('.popup .button').off('click');
 	});
 }
-
-})();

@@ -1360,6 +1360,7 @@ body {
 }
 .position-page .detail .show {
   position: relative;
+  padding-bottom: .2rem;
 }
 .position-page .detail .show p {
   margin: .4rem 0;
@@ -1394,6 +1395,9 @@ body {
   color: #999999;
   background-color: #f4f3f3;
 }
+.position-page .detail .show .status {
+  color: #f64353;
+}
 .position-page .detail .show .setprice {
   display: inline-block;
   padding: .2rem;
@@ -1412,7 +1416,7 @@ body {
 .position-page .detail .deal {
   position: relative;
   border-top: solid 1px #eeeeee;
-  padding-top: .4rem;
+  padding-top: .2rem;
 }
 .position-page .detail .deal p {
   margin: .4rem 0;
@@ -1420,11 +1424,20 @@ body {
   color: #333333;
 }
 .position-page .detail .deal p .inp {
-  width: 1.8rem;
+  width: 4.8rem;
   border-radius: .2rem;
   padding: .2rem;
   border: solid 1px #eee;
   margin: 0 .2rem;
+}
+.position-page .detail .deal p .txt {
+  display: inline-block;
+  width: 4.8rem;
+  padding: .2rem;
+  margin: 0 .2rem;
+  height: .75rem;
+  line-height: .75rem;
+  color: #929292;
 }
 .position-page .detail .deal .tip {
   font-size: .75rem;
